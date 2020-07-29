@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QRReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHO-wd-q1D">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8x-mK-YEd">
+                                <rect key="frame" x="60" y="702" width="294" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escanea un QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-45-lcG">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="t8v-45-lcG" firstAttribute="leading" secondItem="K8x-mK-YEd" secondAttribute="leading" id="4uf-TL-eO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="t8v-45-lcG" secondAttribute="bottom" id="69l-kg-cve"/>
+                                    <constraint firstAttribute="trailing" secondItem="t8v-45-lcG" secondAttribute="trailing" id="XvF-Om-KUg"/>
+                                    <constraint firstItem="t8v-45-lcG" firstAttribute="top" secondItem="K8x-mK-YEd" secondAttribute="top" id="bUY-xb-0lr"/>
+                                    <constraint firstAttribute="height" constant="100" id="gxb-yc-IRs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FHO-wd-q1D" secondAttribute="trailing" id="71I-Tg-3S0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K8x-mK-YEd" secondAttribute="bottom" constant="60" id="GBw-CQ-k8l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K8x-mK-YEd" secondAttribute="trailing" constant="60" id="HgZ-rI-zrb"/>
+                            <constraint firstItem="FHO-wd-q1D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mfw-zr-uBd"/>
+                            <constraint firstItem="FHO-wd-q1D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ejL-FL-lv8"/>
+                            <constraint firstAttribute="bottom" secondItem="FHO-wd-q1D" secondAttribute="bottom" id="mgw-44-F3y"/>
+                            <constraint firstItem="K8x-mK-YEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="pMg-qO-Nly"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="FHO-wd-q1D" id="ePD-Jy-YfF"/>
+                        <outlet property="resultContainerView" destination="t8v-45-lcG" id="wdP-Z1-8rj"/>
+                        <outlet property="resultInfoLabel" destination="t8v-45-lcG" id="82Q-wC-t4S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </scene>
     </scenes>
 </document>
